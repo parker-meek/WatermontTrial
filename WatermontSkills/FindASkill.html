@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skill Finder</title>
+    <script type='text/javascript'>
+        var SkillSet = new Array(12);
+        SkillSet["Empty"]=["Select a Skill"];
+        SkillSet["Entering"]=["Crying","Needs Prompting","In Immediately","Steps","Ladder","Sitting on Wall","Jumping From Wall",
+            "Sitting Dive From Wall","Kneeling Dive From Wall","Standing Dive From Wall","Sitting From Block",
+            "Standing from Block","Racing Start"];
+        SkillSet["Exiting"]=["Steps With Assistance","Ladder with Assistance","Wall with Assistance","Steps Independently",
+            "Ladder Independently", "Wall Independently"];
+        SkillSet["Floating"]=["Back Head Up","Back Ears In","Back with Assistance","Back Independently", "Front With Assistance",
+            "Front Independently"];
+        SkillSet["Bubbles"]=["Attempts","Mouth In", "Mouth and Nose In", "Face In","Rotary Breathing"];
+        SkillSet["Kicking"]=["BACK on Wall","BACK with float", "BACK Propel with float", "BACK Independent","FRONT on wall",
+                                "FRONT with float","FRONT Propel with float"," FRONT Independently","FRONT Independently with Face in",
+                                "FRONT Independently with Bubbles","FRONT Independent W/ Rotary breathing"];
+        SkillSet["Arms"]=["On Wall", "With Float Under Arms", "With Float in Hands","Propel w/float under arms","Propel W/ Float In hand",
+            "Propel w/ float & bubbles", "Float with Rotary breathing","Propel independently", "Propel Independently with face in",
+        "Propel Independently with Bubbles", "Propel Independently with Breathing","BACK On Wall","Back With Float Under Arms",
+                            "BACK With Float in Hands", "BACK Propel w/float under arms", "BACK Propel W/ Float In hand",
+            "BACK Propel Independently"];
+        SkillSet["Breaststroke"]=["Flutter Kick", "Partial Flutter Kick", "Both Feet pointed Inwards","One Foot Pointed Inward",
+            "Legal Kick on Wall", "Legal Kick on Float", "Legal kick Independently", "Arms Standing", "Arms with Float" , "Arms with Float and Breath",
+        "Legal Arms with Float", "Legal Arms and breathing with Float" , "Arms Independently", "Arms and Breathing Independently",
+            "Legal Arms Independent", "Legal Arms and Breath Independently", "Legal Breaststroke"];
+        SkillSet["Butterfly"]=["Flutter Kick", "Partial Flutter Kick", "Both Feet pointed Inwards","One Foot Pointed Inward",
+            "Legal Kick on Wall", "Legal Kick on Float", "Legal kick Independently", "Arms Standing", "Arms with Float" , "Arms with Float and Breath",
+            "Legal Arms with Float", "Legal Arms and breathing with Float" , "Arms Independently", "Arms and Breathing Independently",
+            "Legal Arms Independent", "Legal Arms and Breath Independently", "Legal Butterfly"];
+        SkillSet["Starts"]=["Freestyle","Backstroke","Breaststroke","Butterfly"];
+        SkillSet["Finishes"]=["Freestyle","Backstroke","Breaststroke","Butterfly"];
+        SkillSet["Turns"]=["Freestyle","Backstroke","Breaststroke","Butterfly","IM"];
+        function listChange(selectObj) {
+            var idx = selectObj.selectedIndex;
+            var which = selectObj.options[idx].value;
+            var slist = SkillSet[which];
+
+            var cSelect=document.getElementById("Skill_List");
+            var len=cSelect.options.length;
+            while (cSelect.options.length > 0) {
+                cSelect.remove(0);
+            }
+            var newOption;
+            for (var i=0; i<slist.length; i++) {
+                newOption = document.createElement("option");
+                newOption.value = slist[i];  // assumes option string and value are the same
+                newOption.text=slist[i];
+                // add the new option
+                try {
+                    cSelect.add(newOption);  // this will fail in DOM browsers but is needed for IE
+                }
+                catch (e) {
+                    cSelect.appendChild(newOption);
+                }
+            }
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+<form action="SwimmersWithSkill.html">
+Skill Area: <select id="skill_options" onchange="listChange(this);">
+    <option value="preset">--Select Skill Here--</option>
+    <option value="Entering">Entering</option>
+    <option value="Exiting">Exiting</option>
+    <option value="Floating">Floating</option>
+    <option value="Bubbles">Bubbles</option>
+    <option value="Kicking">Kicking</option>
+    <option value="Arms">Arms</option>
+    <option value="Breaststroke">BreastStroke</option>
+    <option value="Butterfly">Butterfly</option>
+    <option value="Starts">Starts</option>
+    <option value="Finishes">Finishes</option>
+    <option value="Turns">Turns</option>
+</select>
+<br/><br/>
+<select name="Skill_List" ID="Skill_List">
+    <option> Select a Skill</option>
+</select>
+    <br/> <br/>
+    <h3>Optional Information</h3>
+    Practice Group
+    <select>
+        <option>First Practice</option>
+        <option>Second Practice</option>
+        <option>Third Practice</option>
+        <option>Evening Practice</option>
+    </select>
+    <br/> <br/>
+    Age
+    Younger than: <input type="number">
+    Older than: <input type="number">
+    <br/><br/>
+    Gender: <input type="radio"> Male <input type="radio"> Female
+    <br/><br/>
+    <input type="submit">
+</form>
+</body>
+</html>

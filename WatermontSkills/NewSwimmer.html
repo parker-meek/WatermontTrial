@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Swimmer Info</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="SwimmerValidation.js"></script>
+
+</head>
+<body>
+
+<h2>New Swimmer Info</h2>
+<form method="post" action="NewSwimmer2.php">
+First Name: <input type="text" id="fname" name="First Name"> <br/> <br/>
+Last Name :<input type="text" id="lname" name="Last Name"> <br/><br/>
+Age: <input type="number" name ="age" id="age" min="3" max="18">   <br/> <br/>
+Gender: <input type="radio" id="genderM"  name="gender" value="M"> Male <input type="radio" name="gender" id="genderF" value="F"> Female <br/><br/>
+Practice: <input type="radio" name="practice" value="1" > First Practice <input type="radio"  name="practice" value="2"> Second Practice
+    <input type="radio"  name="practice" value="3"> Third Practice
+        <input type="radio" name="practice" value="4"> Evening Practice
+    <br/><br/>
+
+    <input type="submit">
+</form>
+
+</body>
+
+</html>

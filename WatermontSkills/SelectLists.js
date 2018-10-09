@@ -7,6 +7,8 @@ SkillSet["Exiting"]=["Steps With Assistance","Ladder with Assistance","Wall with
     "Ladder Independently", "Wall Independently"];
 SkillSet["Floating"]=["Back Head Up","Back Ears In","Back with Assistance","Back Independently", "Front With Assistance",
     "Front Independently"];
+SkillSet["Bubbles"] = ["Attempts","Mouth In", "Mouth and Nose In", "Face In", "Rotary Breathing"];
+SkillSet["Back on wall", "Back "]
 function listChange(selectObj) {
     var idx = selectObj.selectedIndex;
     var which = selectObj.options[idx].value;

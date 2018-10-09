@@ -1,0 +1,24 @@
+button {
+    background-color: #0da861;
+    cursor: pointer;
+    font-size: 22px;
+    float: left;
+    padding-bottom:30px;
+    padding-top: 30px;
+    width: 50%;
+}
+
+body{
+    background-color:black;
+}
+
+button:hover {
+    background-color: #00ff99;
+}
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}

@@ -19,6 +19,7 @@
             padding: 0% 22.5% 0% 25% ;
         }
     </style>
+    <link rel="stylesheet" href="secondaryPage.css">
 </head>
 
 <body>
@@ -261,31 +262,27 @@
     <input type="submit" value="Submit"/>
 </form>
 </body>
-
-
-
 <?php
-        $server = '127.0.0.1:36'
-        $dsn = 'dbname=watermont';
-        $user = 'root';
-        $password = 'root';
+$user = 'root';
+$password = 'root';
+$db = 'watermontskills';
+$host = 'localhost';
+$port = 3306;
 
-        $fname = $_POST["First Name"];
-        $lname = $_POST["Last Name"];
-        $age = $_POST["age"];
-        $gender= $_POST["gender"];
-        $practice= $_POST["practice"]
+$link = new mysqli("$host:$port",
+$user,
+$password,
+$db
+);
 
-    $conn -> new sqli($server,$dsn,$user,$password)
+$sql = "INSERT INTO swimmerid (swimmerID,firstname, lastname, age, gender, extraInfo)
+        VALUES( 1,'Parker','Meek',12,'M','hello')";
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
 
-        $sql = "INSERT INTO identity(firstName,lastName,age,practiceGroup,Gender)
-                VALUES(".$fname.",".$lname.",".$age.",".$practice.",".$gender.")";
-
-        if($conn->query($sql)==TRUE){
-            echo "New Swimmer Successfully added"
-        }
-
-
-
+$conn->close();
         ?>
-</html>
+ </html>

@@ -10,14 +10,18 @@
     }
 
 </style>
+
+<script type="text/json" src="example.json"></script>
+<script src="foundSwimmerTable.js"></script>
+<script src="tableOrganizer.js"></script>
 <body>
-<table>
+<table id = "foundSwimmers">
     <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Age</th>
-        <th>Gender</th>
-        <th>Practice Group</th>
+        <th onclick="sortTable(0)">First Name</th>
+        <th onclick="sortTable(1)">Last Name</th>
+        <th onclick="sortTable(2)">Age</th>
+        <th onclick="sortTable(3)">Gender</th>
+        <th onclick="sortTable(4)">Practice Group</th>
     </tr>
     <tr>
         <td>Parker</td>
@@ -25,6 +29,14 @@
         <td>21</td>
         <td>M</td>
         <td>Coach</td>
+    </tr>
+
+    <tr>
+        <td>Alicia</td>
+        <td>Novak</td>
+        <td>15</td>
+        <td>F</td>
+        <td>3</td>
     </tr>
 </table>
 
